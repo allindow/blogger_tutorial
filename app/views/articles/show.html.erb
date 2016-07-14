@@ -1,4 +1,9 @@
 <h1><%= @article.title %></h1>
+<p>
+  <% if @article.image.exists? %>
+  <p><%= image_tag @article.image.url %></p>
+  <% end %>
+</p>
 <p><%= @article.body %></p>
 <%= render partial: 'comments/form' %>
 <%= render partial: 'articles/comment', collection: @article.comments %>
